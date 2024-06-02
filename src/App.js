@@ -1,25 +1,34 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import PostList from './components/PostList';
+import PostForm from './components/PostForm';
 import './App.css';
 
-function App() {
+const App = () => {
+  const [posts, setPosts] = useState([]);
+  const currentUser = 'noname'; 
+
+  const handleSubmit = (newPost) => {
+    setPosts([
+      ...posts,
+      { id: posts.length + 1, ...newPost, timestamp: new Date().getTime() },
+    ]);
+  };
+
+  const handleDelete = (id) => {
+    setPosts(posts.filter((post) => post.id !== id));
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <h1>Just Форум</h1>
+      <PostForm onSubmit={handleSubmit} currentUser={currentUser} />
+      <PostList
+        posts={posts}
+        currentUser={currentUser}
+        onDelete={handleDelete}
+      />
     </div>
   );
-}
+};
 
 export default App;

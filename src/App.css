@@ -1,38 +1,138 @@
-.App {
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f8f8;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+h1 {
   text-align: center;
+  color: #ff69b4;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.post {
+  margin-bottom: 20px;
+  padding: 20px;
+  background-color: #fff5f7;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  position: relative;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.post h3 {
+  color: #ff69b4;
+  margin-bottom: 10px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.post p {
+  color: #666;
+  margin-bottom: 5px;
+}
+
+.post img {
+  max-width: 100%;
+  margin-top: 10px;
+}
+
+.post .post-info {
+  font-size: 12px;
+  color: #999;
+  margin-top: 5px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.post .post-info span:first-child {
+  margin-right: auto;
+}
+
+.post .post-info span:last-child {
+  margin-left: auto;
+}
+
+.post .post-info button {
+  margin-left: 10px;
+  padding: 5px 10px;
+  background-color: #ff69b4;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+}
+
+.post .post-info button:hover {
+  background-color: #ff3399;
+}
+
+form {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin-bottom: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+form div {
+  margin-bottom: 15px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+form label {
+  font-weight: bold;
+  color: #ff69b4;
+  margin-bottom: 5px;
+}
+
+form input,
+form textarea {
+  padding: 25px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  margin-top: 20px;
+}
+
+form button {
+  padding: 10px 20px;
+  background-color: #ff69b4;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+}
+
+form button:hover {
+  background-color: #ff3399;
+}
+
+.post::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  width: 20px;
+  height: 20px;
+  background-color: #ff69b4;
+  border-radius: 50%;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.post::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  right: -10px;
+  width: 20px;
+  height: 20px;
+  background-color: #ff69b4;
+  border-radius: 50%;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
