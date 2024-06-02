@@ -1,6 +1,6 @@
 {
   "name": "simple-forum", 
-  "homepage": "https://marilavo.github.io/myblog",
+  "homepage": "https://marilavo.github.io/myblog/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
